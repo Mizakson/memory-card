@@ -1,12 +1,13 @@
 // import { useState } from 'react'
 import './styles/App.css'
+import Description from './components/Description'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hello...</h1>
+      <Description />
     </>
   )
 }
