@@ -13,3 +13,9 @@ body {
     text-align: left;
     padding: 2.5%;
 }
+
+.score {
+    display: flex;
+    gap: 15%;
+    align-items: center;
+}
