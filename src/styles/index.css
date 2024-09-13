@@ -8,14 +8,13 @@ body {
 }
 
 .game-info {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    text-align: left;
+    text-align: center;
     padding: 2.5%;
 }
 
 .score {
     display: flex;
-    gap: 15%;
     align-items: center;
+    justify-content: center;
+    gap: 5%;
 }

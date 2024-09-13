@@ -8,17 +8,9 @@ export default function Description() {
             <div className="title">
                 <h1 title={credits}>Memory-card</h1>
                 <div className="game-info">
-                <div className="rules">
                     <p>{rulesText}</p>
                 </div>
-                <div className="score">
-                    <p id="current">Score: </p>
-                    <p id="best">Best Score: </p>
-                </div>
             </div>
-            </div>
-
-
         </header>
     )
 }
