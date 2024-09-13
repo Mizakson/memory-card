@@ -1,8 +1,15 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Score() {
 
     const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        // code to be executed
+        console.log("Count: ", count)
+    
+        // optional return function
+    }, [count]) // dependency array
 
     const incrementCount = (event) => {
         event.preventDefault()
@@ -13,8 +20,6 @@ export default function Score() {
         event.preventDefault()
         setCount(count - 1)
     }
-
-
 
 
     return(
