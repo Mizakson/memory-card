@@ -1,4 +1,5 @@
 export default function Card() {
+
     const keyId = crypto.randomUUID()
     console.log(keyId)
     const URL = "#"
