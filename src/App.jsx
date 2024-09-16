@@ -16,15 +16,19 @@ function App() {
 
   const search = 'animal'
 
+  // function handleClick(event) {
+
+  // }
+
   useEffect(() => {
     // code to be executed
     fetch(`${API_URL}?query=${search}&per_page=15&page=1`, {
-      mode: 'cors',
       headers: {
-        Authorization: API_KEY
-      }
+        Authorization: API_KEY,
+      },
     })
       .then((response) => response.json())
+      .then((response) => console.log(response))
 
     // optional return function
 }, []) // dependency array
