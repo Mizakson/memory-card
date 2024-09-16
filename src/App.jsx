@@ -1,12 +1,10 @@
-// import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './styles/App.css'
 import Description from './components/Description'
 import Score from './components/Score'
-import Display from './components/Display'
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [count, setScore] = useState(0)
 
   useEffect(() => {
     // code to be executed
@@ -18,7 +16,6 @@ function App() {
     <>
       <Description />
       <Score />
-      <Display />
     </>
   )
 }

@@ -1,13 +1,9 @@
-export default function Card() {
-
-    const keyId = crypto.randomUUID()
-    console.log(keyId)
-    const URL = "#"
+export default function Card({ url, title }) {
 
     return (
-        <div className="card" key={keyId}>
-            <img src={URL}/>
-            <p className="img-text"></p>
+        <div className="card">
+            <img src={url}/>
+            <p>{title}</p>
         </div>
     )
 }
