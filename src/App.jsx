@@ -3,6 +3,7 @@ import './styles/App.css'
 import Card from './components/Card'
 import Description from './components/Description'
 import Score from './components/Score'
+import arrShuffle from './js/arrShuffle'
 
 // API KEY + URL
 const API_URL = 'https://api.com/pexels.com/v1/search'
