@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './styles/App.css'
+import Card from './components/Card'
 import Description from './components/Description'
 import Score from './components/Score'
 
