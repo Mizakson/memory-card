@@ -17,9 +17,20 @@ function App() {
 
   const search = 'animal'
 
-  // function handleClick(event) {
+  function handleClick(event) {
+    const newObj = arrShuffle(picsArr)
+    setPicsArr(newObj)
 
-  // }
+    if (!cardInfo.includes(event.current.target.id)) {
+      setCardInfo([...cardInfo, event.current.target.id])
+      setScore(score + 1)
+    }
+    else {
+      setCardInfo([])
+      setBestScore(bestScore < score ? score : bestScore)
+      setScore(0)
+    }
+  }
 
   useEffect(() => {
     // code to be executed
@@ -29,7 +40,6 @@ function App() {
       },
     })
       .then((response) => response.json())
-      .then((response) => console.log(response))
 
     // optional return function
 }, []) // dependency array
