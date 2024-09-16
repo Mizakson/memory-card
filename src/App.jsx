@@ -6,7 +6,7 @@ import Score from './components/Score'
 import arrShuffle from './js/arrShuffle'
 
 // API KEY + URL
-const API_URL = 'https://api.com/pexels.com/v1/search'
+const API_URL = 'https://api.pexels.com/v1/search'
 const API_KEY = import.meta.env.VITE_API_KEY
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
     }
     else {
       setCardInfo([])
+      // if bestscore < score then score = bestscore, reset counter
       setBestScore(bestScore < score ? score : bestScore)
       setScore(0)
     }
@@ -40,6 +41,10 @@ function App() {
       },
     })
       .then((response) => response.json())
+      .then((data) => arrShuffle(data.photos))
+      .then((arrShuffled) => {
+        setPicsArr(arrShuffled)
+      })
 
     // optional return function
 }, []) // dependency array
@@ -47,8 +52,10 @@ function App() {
   return (
     <>
       <Description />
-      <Score />
-      <div className="display"></div>
+      <Score curr={score} best={bestScore}/>
+      <div className="display">
+
+      </div>
     </>
   )
 }
