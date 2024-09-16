@@ -16,6 +16,7 @@ function App() {
     <>
       <Description />
       <Score />
+      <div className="display"></div>
     </>
   )
 }
