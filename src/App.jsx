@@ -44,11 +44,9 @@ function App() {
       <Description />
       <Score curr={score} best={bestScore}/>
       <div className="display">
-      {picsArr?.map((pic, index) => (
-        <div className='container' key={pic.id} id={index}
-        onClick={handleClick} style={{cursor: 'pointer'}}>
-        <Card url={pic.src.medium} title={pic.alt} id={pic.id}/>
-        </div>
+      {picsArr?.map((pic) => (
+        <Card url={pic.src.medium} title={pic.alt} id={pic.id} key={pic.id}/>
+      
       ))}
       </div>
     </>
