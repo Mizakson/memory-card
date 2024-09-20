@@ -7,4 +7,4 @@ In this project I learned...
 - Basic implementation of useEffect hook to call an external API
 - Difference between event.target and event.currentTarget
 
-[Pexels Image API](https://www.pexels.com/)
+API used in project: [Pexels](https://www.pexels.com/)
