@@ -18,27 +18,14 @@ function App() {
   const search = 'animal'
 
   function handleClick(e) {
-    e.preventDefault()
-    const newObj = arrShuffle(picsArr)
-    setPicsArr(newObj)
-
-    console.log(score)
-
-    if (!cardInfo.includes(e.target.id)) {
-      setCardInfo([...cardInfo, e.target.id])
-      setScore(score + 1)
-    } 
-    // else {
-    //   setCardInfo([])
-    //   setBestScore(bestScore < score ? score : bestScore)
-    //   setScore(0)
-    // }
+    const initialArr = Array.from(document.querySelector(".display").childNodes)
+    console.log(initialArr)
     
   }
 
   useEffect(() => {
     // code to be executed
-    fetch(`${API_URL}?query=${search}&per_page=15&page=1`, {
+    fetch(`${API_URL}?query=${search}&per_page=10&page=1`, {
       mode: 'cors',
       headers: {
         Authorization: API_KEY,
@@ -57,8 +44,8 @@ function App() {
       <Description />
       <Score curr={score} best={bestScore}/>
       <div className="display">
-      {picsArr?.map((pic) => (
-        <div className='container' key={pic.id} id={pic.id}
+      {picsArr?.map((pic, index) => (
+        <div className='container' key={pic.id} id={index}
         onClick={handleClick} style={{cursor: 'pointer'}}>
         <Card url={pic.src.medium} title={pic.alt} id={pic.id}/>
         </div>
