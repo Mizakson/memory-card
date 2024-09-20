@@ -8,3 +8,5 @@ In this project I learned...
 - Difference between event.target and event.currentTarget
 
 API used in project: [Pexels](https://www.pexels.com/)
+
+[Live Preview](https://mizakson-memory-card.netlify.app/)
