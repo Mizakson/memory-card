@@ -13,14 +13,38 @@ function App() {
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
   const [picsArr, setPicsArr] = useState([])
-  const [cardInfo, setCardInfo] = useState([])
+  const [cardInfo, setCardInfo] = useState(null)
 
   const search = 'animal'
 
-  function handleClick(e) {
-    const initialArr = Array.from(document.querySelector(".display").childNodes)
-    console.log(initialArr)
-    
+  function handleClick(event) {
+    // const initialArr = Array.from(document.querySelector(".display").childNodes)
+    // console.log(initialArr)
+    event.preventDefault()
+
+    const curr = event.currentTarget.id
+    setCardInfo(curr)
+    console.log(curr)
+
+    setPicsArr(arrShuffle(picsArr))
+    console.log(picsArr)
+      
+    if (curr === cardInfo) {
+      setScore(0)
+
+      if (score > bestScore) {
+        setBestScore(score)
+      }
+
+    }
+
+    if (curr !== cardInfo) {
+      setScore(score + 1)
+    }
+
+    // const prev = event.currentTarget.id
+    // setCardInfo(prev)
+    // console.log(cardInfo)
   }
 
   useEffect(() => {
@@ -45,7 +69,7 @@ function App() {
       <Score curr={score} best={bestScore}/>
       <div className="display">
       {picsArr?.map((pic) => (
-        <Card url={pic.src.medium} title={pic.alt} id={pic.id} key={pic.id}/>
+        <Card url={pic.src.medium} title={pic.alt} id={pic.id} key={pic.id} onClick={handleClick}/>
       
       ))}
       </div>
