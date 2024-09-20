@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     // code to be executed
-    fetch(`${API_URL}?query=${search}&per_page=10&page=1`, {
+    fetch(`${API_URL}?query=${search}&per_page=9&page=1`, {
       mode: 'cors',
       headers: {
         Authorization: API_KEY,
